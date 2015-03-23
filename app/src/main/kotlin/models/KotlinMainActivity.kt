@@ -62,4 +62,38 @@ public class KotlinMainAcitivty: Activity() {
      * toString(), equals() and hashCode() methods.
      */
     data class Jumper(val colour: String? = null)
+
+    /**
+     * Singletons in Kotlin have no need for a private constructor and the calling
+     * of getInstance().
+     */
+    object ALonelySingleton {
+        val numberOfDates: Int = 0;
+    }
+
+    /**
+     * Demonstrates the various null states of a variable.
+     */
+    fun nullVariables() {
+        var nonNullString: String = "I will never ever be null";
+
+     //   var nullString: String = null //"I will never ever compile";
+
+        var string: String? = null // I may or may not be null...that would be an ecuminical matter.
+    }
+
+    /**
+     * Shows how NPE's can be handled on optional variable types.
+     */
+    fun justHandleIt() {
+        var bubaGumpShrimp: String? = null
+
+        // If the variable is null, the "?" will catch the NPE and ignore the
+        // method called on it.
+        bubaGumpShrimp?.contains("A box of chocolates")
+
+        // If the variable is null, an NPE will be thrown. This is because "!!" asserts that
+        // the variable is not null.
+        bubaGumpShrimp!!.contains("A box of NPE's")
+    }
 }

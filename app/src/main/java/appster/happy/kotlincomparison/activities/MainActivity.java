@@ -23,6 +23,7 @@ import java.util.ListIterator;
 import appster.happy.kotlincomparison.R;
 import models.JavaCar;
 import models.KotlinCar;
+import singleton.ALonelySingleton;
 
 /**
  * Created by Ronan on 15/03/2015.
@@ -128,5 +129,9 @@ public class MainActivity extends Activity{
         public void setColour(String colour) {
             this.colour = colour;
         }
+    }
+
+    private void getTheLonelySingleton() {
+        ALonelySingleton aLonelySingleton = ALonelySingleton.getInstance();
     }
 }
