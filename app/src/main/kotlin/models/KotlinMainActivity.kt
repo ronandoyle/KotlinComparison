@@ -4,6 +4,7 @@ import android.app.Activity
 import android.os.Bundle
 import appster.happy.kotlincomparison.R
 import android.support.v4.app.Fragment
+import java.util.ArrayList
 
 /**
  * Created by Ronan on 15/03/2015.
@@ -22,8 +23,30 @@ public class KotlinMainAcitivty: Activity() {
         KotlinCar("09C9382", "Audi", "A4", "2009", "1968cc", 4, 2, 90000)
     }
 
-    fun viewListener() {
+    /**
+     * Setting a click listener on a TextView.
+     */
+    fun viewClickListener() {
         val textView = findViewById(R.id.main_text_view)
         textView.setOnClickListener({toast(this, "Clicked!")})
+    }
+
+    /**
+     * Removing all the odd numbers from a list of integers.
+     */
+    fun removeOddNumbers() {
+        val numberList = ArrayList<Int>()
+        numberList.add(10)
+        numberList.add(11)
+        numberList.add(12)
+        numberList.add(13)
+        numberList.add(14)
+        numberList.add(15)
+        numberList.add(16)
+        numberList.add(17)
+        numberList.add(18)
+        numberList.add(19)
+        numberList.add(20)
+        numberList.filter {it % 2 == 1}
     }
 }

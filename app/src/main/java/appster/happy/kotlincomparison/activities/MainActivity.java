@@ -2,6 +2,7 @@ package appster.happy.kotlincomparison.activities;
 
 import android.app.Activity;
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -10,6 +11,14 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 import appster.happy.kotlincomparison.R;
 import models.JavaCar;
@@ -49,7 +58,11 @@ public class MainActivity extends Activity{
         javaCar.setMileage(90000);
     }
 
-    private void viewListener(final Context context) {
+    /**
+     * Setting a click listener on a TextView.
+     * @param context
+     */
+    private void viewClickListener(final Context context) {
         TextView textView = (TextView) findViewById(R.id.main_text_view);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,5 +70,34 @@ public class MainActivity extends Activity{
                 Toast.makeText(context, "Clicked!", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    /**
+     * Removing all the odd numbers from a list of integers.
+     */
+    private void removeOddNumbers() {
+        int i = 0;
+        List<Integer> numberList = new ArrayList<Integer>();
+        numberList.add(10);
+        numberList.add(11);
+        numberList.add(12);
+        numberList.add(13);
+        numberList.add(14);
+        numberList.add(15);
+        numberList.add(16);
+        numberList.add(17);
+        numberList.add(18);
+        numberList.add(19);
+        numberList.add(20);
+
+        for (Iterator<Integer> it = numberList.iterator(); it.hasNext(); )
+        {
+            it.next(); // Add this line in your code
+            if (i % 2 != 0)
+            {
+                it.remove();
+            }
+            i++;
+        }
     }
 }
