@@ -1,5 +1,8 @@
 package models;
 
+import android.content.Context;
+import android.widget.Toast;
+
 /**
  * Created by Ronan on 15/03/2015.
  */
@@ -75,5 +78,10 @@ public class JavaCar {
 
     public void setMileage(int mileage) {
         this.mileage = mileage;
+    }
+
+    private void toast(Context context, CharSequence message, int duration) {
+        duration = Toast.LENGTH_SHORT;
+        Toast.makeText(context, message, duration).show();
     }
 }
