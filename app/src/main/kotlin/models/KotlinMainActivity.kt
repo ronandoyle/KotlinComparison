@@ -49,4 +49,17 @@ public class KotlinMainAcitivty: Activity() {
         numberList.add(20)
         numberList.filter {it % 2 == 1}
     }
+
+    /**
+     * Used to set and get the value of a lovely jumper.
+     */
+    fun jumperColour() {
+        val colour = Jumper("Mushroom Soup Grey")
+    }
+
+    /**
+     * A class for a coloured jumper. This 'data' class implicitly generates
+     * toString(), equals() and hashCode() methods.
+     */
+    data class Jumper(val colour: String? = null)
 }

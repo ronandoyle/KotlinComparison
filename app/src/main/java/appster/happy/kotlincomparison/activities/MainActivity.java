@@ -33,6 +33,7 @@ public class MainActivity extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        removeOddNumbers();
     }
 
 
@@ -98,6 +99,34 @@ public class MainActivity extends Activity{
                 it.remove();
             }
             i++;
+        }
+    }
+
+    /**
+     * Used to set and get the value of a lovely jumper.
+     */
+    private void jumperColour() {
+        Jumper jumper = new Jumper("Mushroom Soup Grey");
+        String colour = jumper.getColour();
+    }
+
+    /**
+     * A class for a coloured jumper.
+     */
+    class Jumper {
+
+        private String colour;
+
+        public Jumper(String colour) {
+            this.colour = colour;
+        }
+
+        public String getColour() {
+            return colour;
+        }
+
+        public void setColour(String colour) {
+            this.colour = colour;
         }
     }
 }
